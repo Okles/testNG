@@ -1,10 +1,11 @@
 package test;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class day4 {
 
-	@Test
+	@Test(groups= {"Smoke"})
 	public void webLoginhomeLoan()
 	{
 		
@@ -12,14 +13,14 @@ public class day4 {
 		System.out.println("Web login home");
 		
 	}
-	
+	@Parameters({"URL"}) //it will apply to a below SINGLE test only
 	@Test
-	public void mobileLoginhomeLoan()
+	public void mobileLoginhomeLoan(String urlName)
 	{
 		
 		//appium
 		System.out.println("Mobile login home");
-		
+		System.out.println(urlName);
 	}
 	
 	@Test

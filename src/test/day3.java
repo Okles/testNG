@@ -1,9 +1,21 @@
 package test;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class day3 {
 
+	@BeforeClass
+	public void beforeClass()
+	{
+		System.out.println("Before executing any methods in a class");
+
+	}
+	
 	@Test
 	public void webLoginCarLoan()
 	{
@@ -11,9 +23,20 @@ public class day3 {
 		//selenium
 		System.out.println("Web login car");
 		
+	} 
+	@BeforeMethod
+	public void beforeEvery()
+	{
+		System.out.println("I will execute before every method in a day3 class");
 	}
 	
-	@Test
+	@AfterMethod
+	public void afterEvery()
+	{
+		System.out.println("I will execute after every method in a day3 class");
+	}
+	
+	@Test(timeOut=(long) 0.00001)
 	public void mobileLoginCarLoan()
 	{
 		
@@ -22,12 +45,47 @@ public class day3 {
 		
 	}
 	
-	@Test
-	public void loginAPIcarLoan()
+	@BeforeSuite
+	public void beforeSuite()
+	{
+		
+		System.out.println("I am number one!");
+	}
+	
+	
+	
+	@Test(enabled=false)
+	public void mobileSignInLoan()
+	{
+		
+		//appium
+		System.out.println("Mobile sign in");
+		
+	}
+	
+	@Test(dependsOnMethods= {"webLoginCarLoan","mobileLoginCarLoan"})
+	public void mobileSignOutLoan()
+	{
+		
+		//appium
+		System.out.println("Mobile sign out");
+		
+	}
+	
+	
+	@Test(groups= {"Smoke"})
+	public void APIcarLoan()
 	{
 		
 		//REST API automation
 		System.out.println("REST of things ");
+		
+	}
+	
+	@AfterClass
+	public void afterClass()
+	{
+		System.out.println("Executed after running all the methods in a class");
 		
 	}
 	
