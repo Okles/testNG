@@ -20,11 +20,9 @@ public class day1 {
 		 
 	}
 	
-<<<<<<< HEAD
+
 	@AfterSuite(groups= {"Smoke"})
-=======
-	@AfterSuite
->>>>>>> 0128cc722e9049ab27c365843ff00a07ce2191f5
+
 	public void afterSuite()
 	{
 		System.out.println("I am the last :(");

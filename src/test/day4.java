@@ -13,14 +13,13 @@ public class day4 {
 		System.out.println("Web login home");
 		
 	}
-	@Parameters({"URL"}) //it will apply to a below SINGLE test only
 	@Test
-	public void mobileLoginhomeLoan(String urlName)
+	public void mobileLoginhomeLoan()
 	{
 		
 		//appium
 		System.out.println("Mobile login home");
-		System.out.println(urlName);
+	
 	}
 	
 	@Test

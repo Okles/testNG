@@ -3,6 +3,7 @@
 <suite name="Loan Department">
    <!--  parameters on a suite level  -->
   <parameter name="URL" value="google.com"/>
+    <parameter name="APIKey/userName" value="Bogdan"/>
   <test thread-count="5" name="Personal Loan">
     <classes>
       <class name="test.day1">

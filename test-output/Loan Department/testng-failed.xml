@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Loan Department]">
-  <test name="Personal Loan(failed)">
+  <parameter name="APIKey/userName" value="Bogdan"/>
+  <parameter name="URL" value="google.com"/>
+  <test name="Car Loan(failed)">
     <classes>
-      <class name="test.day2">
+      <class name="test.day3">
         <methods>
-          <include name="ploan"/>
-          <include name="prerequisite"/>
+          <include name="beforeSuite"/>
+          <include name="afterEvery"/>
+          <include name="beforeClass"/>
+          <include name="mobileSignInLoan"/>
+          <include name="beforeEvery"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- test.day2 -->
+      </class> <!-- test.day3 -->
     </classes>
-  </test> <!-- Personal Loan(failed) -->
+  </test> <!-- Car Loan(failed) -->
 </suite> <!-- Failed suite [Loan Department] -->
