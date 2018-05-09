@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Loan Department">
+<suite name="Loan Department" parallel="tests" thread-count="8"> <!-- running X tests parallely -->
+
+<!--  implementing listeners -->
+<listeners>
+	<listener class-name="test.listenersInterface"/>
+</listeners>
+
    <!--  parameters on a suite level  -->
   <parameter name="URL" value="google.com"/>
     <parameter name="APIKey/userName" value="Bogdan"/>
+  
   <test thread-count="5" name="Personal Loan">
     <classes>
       <class name="test.day1">
